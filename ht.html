@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="st.css">
+    <link  rel="stylesheet" href="доп/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-info sticky-top navbar-expand-sm">
+    <a href="#" class="navbar-brand">
+    <img src="img/stonks1.png" height="30" width="30" class="d-inline-block align-top">Stonks</a>
+
+    <ul class="navbar-nav mr-auto text-white">
+    <a href="#hdr"  id="tv1">прекрасный header</a>
+    <a href="#glr"  id="tv2">галерея</a>
+    <a href="#ft"  id="tv3">footer</a>
+    </ul>
+    <form name = "blinkbutton">
+      <button type="button" name="button" onclick="window.location.href = 'https://www.youtube.com/watch?v=0idvYIGCiG8&t=1s';"  onMouseOver='mouseOver()'onMouseOut='mouseOut()' style="background-color: #1400FF">наведите мышьку</button>
+
+    </form>
+    </nav>
+
+
+<header>
+  <div id="hdr">
+  <div class="textrotator">
+    </div>
+    <h1> текст текст текст текст текст текст текст текст текст текст текст текст</h1>
+  </div>
+</header>
+
+<div id="glr" class="container md">
+  <div class="row">
+    <h1>галерея из рандомных картинок</h1>
+  </div>
+<div class="row">
+  <div class="col-lg-11 ml-auto">
+<img src="img/1.jpg" alt="" class="rt1 swaying">
+<img src="img/1.jpg" alt="" class="rt1 swaying">
+<img src="img/1.jpg" alt="" class="rt1 swaying">
+<img src="img/1.jpg" alt="" class="rt1 swaying">
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-11 ml-auto">
+<img src="img/2.jpg" alt="" class="rt2 swaying">
+<img src="img/2.jpg" alt="" class="rt2 swaying">
+<img src="img/2.jpg" alt="" class="rt2 swaying">
+  <img src="img/2.jpg" alt="" class="rt2 swaying">
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-11 ml-auto">
+<img src="img/3.png" alt="" class="rt3 swaying">
+<img src="img/3.png" alt="" class="rt3 swaying">
+<img src="img/3.png" alt="" class="rt3 swaying">
+<img src="img/3.png" alt="" class="rt3 swaying">
+  </div>
+</div>
+</div>
+
+<footer id="ft">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <i class="fas fa-anchor"></i>
+        <p>тут есть ссылки якори</p>
+      </div>
+      <div class="col-sm-4">
+        <i class="fab fa-accessible-icon"></i>
+        <p>сайт написан мной</p>
+      </div>
+      <div class="col-sm-4">
+      <i class="far fa-clock"></i>
+      <p>сайт написан в кратчайшие сроки</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- ЩА БУДУТ СКРИПТЫ-->
+  <script type="text/javascript" src="доп/jquery.js"></script>
+  <script type="text/javascript" src="доп/popper.js"></script>
+  <script type="text/javascript" src="доп/bootstrap.js"></script>
+
+
+  <script type="text/javascript">
+
+  function Rotator(start_from){
+     var phrases = ["текст на русском","text na nerusskom","здесь могла быть ваша реклама"];
+     var total = phrases.length;
+     var interval = 2000;
+     if(void 0 === start_from){
+         start_from = 0;
+     }
+  
+     $(".textrotator").text(phrases[start_from]).animate({"opacity":"1"}, 1000, function(){
+                 if(start_from >= (total-1)){
+                     setTimeout(function(){
+                         $(".textrotator").animate({"opacity":"0"}, 1000, function(){
+                             Rotator();
+                         });
+                     }, interval);
+                 }else{
+                     start_from++;
+                     setTimeout(function(){
+                         $(".textrotator").animate({"opacity":"0"}, 1000,function(){
+                             Rotator(start_from);
+                         });
+                     }, interval);
+          
+                 }          
+          
+     })
+ }
+
+ $(document).ready(function(){
+   Rotator();
+})
+
+</script>
+
+<script language = "javascript">
+arrColor = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
+function mouseOut() {
+for (i = 0; i < 13; i++)
+    setTimeout ('document.blinkbutton.button.style.background = "#'+arrColor[15-i]+'0'+arrColor[15-i]+'FFF";', i * 50);
+}
+function mouseOver() {
+for (i = 0; i < 15; i++)
+    setTimeout ('document.blinkbutton.button.style.background = "#'+arrColor[i]+'0'+arrColor[i]+'F31";', i * 50);
+}
+</script>
+  </body>
+</html>
